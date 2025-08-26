@@ -1,5 +1,6 @@
 import User from "../models/User.js";
-import { Webhooks } from "svix"
+import pkg from 'svix';
+const { Webhooks } = pkg;
 
 const clerkwebhooks = async (req, res) => {
     try {
