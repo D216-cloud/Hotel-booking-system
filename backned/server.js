@@ -40,11 +40,16 @@ try {
   process.exit(1);
 }
 
-//api listen to clrek webhooks
+// Clerk webhook endpoint
+app.post("/api/clerk/webhook", clerkwebhooks);
 
-app.use("/api/clerk/", clerkwebhooks)
-
-app.get('/', (req, res)=> res.send('Hello worlds'))
+// Debug endpoint to check webhook URL
+app.get("/api/clerk/webhook", (req, res) => {
+  res.json({ 
+    message: "Clerk webhook endpoint is active",
+    setup: "Add this URL to Clerk Dashboard: /api/clerk/webhook"
+  });
+})
 
 const PORT = process.env.PORT || 3000
 
