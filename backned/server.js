@@ -26,7 +26,7 @@ app.get('/api/health', (req, res) => {
 // Root endpoint
 app.get('/', (req, res) => {
   res.status(200).json({ 
-    message: 'Welcome to Hotel Booking API',
+    message: 'Hay User Welcome in Hotel-bokking site',
     status: 'online'
   });
 });
